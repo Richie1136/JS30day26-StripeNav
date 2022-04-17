@@ -5,21 +5,20 @@ const nav = document.querySelector('.top')
 function handleEnter(event) {
   this.classList.add('trigger-enter')
   setTimeout(() => {
-    this.classList.add('trigger-enter-active')
+    if (this.classList.contains('trigger-enter')) {
+      this.classList.add('trigger-enter-active')
+    }
   }, 150);
   background.classList.add('open')
 
   const dropdown = this.querySelector('.dropdown')
-  console.log(dropdown)
   const Navcoords = nav.getBoundingClientRect()
   const coords = dropdown.getBoundingClientRect()
-  console.log(Navcoords)
-  console.log(coords)
   const allCords = {
     height: coords.height,
     width: coords.width,
     top: coords.top - Navcoords.top,
-    left: coords.left
+    left: coords.left - Navcoords.left
   }
   background.style.setProperty('width', `${allCords.width}px`)
   background.style.setProperty('height', `${allCords.height}px`)
