@@ -15,6 +15,13 @@ function handleEnter(event) {
   const coords = dropdown.getBoundingClientRect()
   console.log(Navcoords)
   console.log(coords)
+  const allCords = {
+    height: coords.height,
+    width: coords.width
+  }
+  background.style.setProperty('width', `${allCords.width}px`)
+  background.style.setProperty('height', `${allCords.height}px`)
+
 }
 
 function handleLeave(event) {
