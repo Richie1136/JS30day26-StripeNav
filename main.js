@@ -7,6 +7,7 @@ function handleEnter(event) {
   setTimeout(() => {
     this.classList.add('trigger-enter-active')
   }, 150);
+  background.classList.add('open')
 }
 
 function handleLeave(event) {
@@ -14,6 +15,8 @@ function handleLeave(event) {
   setTimeout(() => {
     this.classList.remove('trigger-enter-active')
   }, 150);
+  background.classList.remove('open')
+
 }
 
 triggers.forEach(trigger => {
