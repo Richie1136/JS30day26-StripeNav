@@ -17,10 +17,13 @@ function handleEnter(event) {
   console.log(coords)
   const allCords = {
     height: coords.height,
-    width: coords.width
+    width: coords.width,
+    top: coords.top - Navcoords.top,
+    left: coords.left
   }
   background.style.setProperty('width', `${allCords.width}px`)
   background.style.setProperty('height', `${allCords.height}px`)
+  background.style.setProperty('transform', `translate(${allCords.left}px, ${allCords.top}px)`)
 
 }
 
